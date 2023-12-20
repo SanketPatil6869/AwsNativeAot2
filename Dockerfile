@@ -1,5 +1,5 @@
 # Use the specified .NET SDK image
-FROM public.ecr.aws/sam/build-dotnet7:latest-x86_64
+FROM public.ecr.aws/sam/build-dotnet7:latest-arm64
 
 # Set the working directory in the container
 WORKDIR /app
@@ -8,4 +8,4 @@ WORKDIR /app
 COPY . .
 
 # Publish the application to a folder with the specified runtime and configuration
-RUN dotnet publish -c Release -r linux-x64 --self-contained true -o out
+RUN dotnet publish -c Release -r linux-arm64 --self-contained true -o out
