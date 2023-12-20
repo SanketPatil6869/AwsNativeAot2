@@ -8,4 +8,4 @@ WORKDIR /app
 COPY . .
 
 # Publish the application to a folder with the specified runtime and configuration
-RUN dotnet publish -c Release -r linux-x86_64 --self-contained true -o out
+RUN dotnet publish -c Release -r linux-x64 --self-contained true -o out
