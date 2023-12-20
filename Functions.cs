@@ -71,7 +71,7 @@ public class Functions
         var response = new APIGatewayHttpApiV2ProxyResponse
         {
             StatusCode = (int)HttpStatusCode.OK,
-            Body = $"Hello World !!! Query String: {queryString} version : {dotnetVersion} , architecture = {architecture}",
+            Body = $"Hello World !! Query String: {queryString} version : {dotnetVersion} , architecture = {architecture}",
             Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
         };
 

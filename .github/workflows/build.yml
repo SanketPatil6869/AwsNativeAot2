@@ -16,7 +16,8 @@ jobs:
         
       - name: Build Lambda in Docker 
         run: |
-          docker build -f Dockerfile --platform linux/arm64 -t myimage . 
+          docker buildx create --use
+          docker buildx build -f Dockerfile --platform=linux/arm64 -t myimage --load . 
           docker run --rm -v $(pwd):/app myimage
         
       - name: Copy files from Docker  
