@@ -1,30 +1,30 @@
-name: Build and deploy lambda 
+# name: Build and deploy lambda 
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
   
   
-jobs:
-   build-and-deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#    build-and-deploy:
+#     runs-on: ubuntu-latest
     
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v2
         
         
-      - name: Build Lambda in Docker 
-        run: |
-          docker buildx create --use
-          docker buildx build -f Dockerfile --platform=linux/arm64 -t myimage --load . 
-          docker run --rm -v $(pwd):/app myimage
+#       - name: Build Lambda in Docker 
+#         run: |
+#           docker buildx create --use
+#           docker buildx build -f Dockerfile --platform=linux/arm64 -t myimage --load . 
+#           docker run --rm -v $(pwd):/app myimage
         
-      - name: Copy files from Docker  
-        run: |
-          docker cp $(docker ps -lq):/app/out ./output
+#       - name: Copy files from Docker  
+#         run: |
+#           docker cp $(docker ps -lq):/app/out ./output
         
-      - name: Zip output 
-        run: |
-          zip -r output.zip out
+#       - name: Zip output 
+#         run: |
+#           zip -r output.zip out
