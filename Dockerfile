@@ -11,3 +11,4 @@ COPY . .
 RUN dotnet publish -c Release -r linux-arm64 --self-contained true -o out
 
 #test
+#test2
