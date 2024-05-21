@@ -9,3 +9,5 @@ COPY . .
 
 # Publish the application to a folder with the specified runtime and configuration
 RUN dotnet publish -c Release -r linux-arm64 --self-contained true -o out
+
+#test
